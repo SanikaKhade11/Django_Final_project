@@ -1,0 +1,38 @@
+center h1{
+    color: #0077ff;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* PROFILE BOX */
+
+center h2{
+    width: 450px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    text-align: left;
+    color: #333;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+}
+
+/* LINKS */
+
+center a{
+    text-decoration: none;
+    background-color: #0077ff;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin: 10px;
+    display: inline-block;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+center a:hover{
+    background-color: #0056b3;
+}

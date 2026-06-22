@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% block content %}
+<center>
+    <h1>CART PAGE</h1>
+    <table border="1">
+        <tr>
+            <th>SL. No</th>
+            <!-- <th>Product Image</th> -->
+            <th>PRoduct Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Remove</th>
+            </tr>
+            {% for i in cartproducts %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <!-- <td>{{i.pimage}}</td>   -->
+                <td>{{i.pname}}</td>
+                <td>{{i.pcategory}}</td>
+                <td>{{i.price}}</td>
+                <td><a href="{% url 'decrementQty' i.id %}">- </a>{{i.quantity}} <a href="{% url 'incrementQty' i.id %}">+</a></td>
+                <td>{{i.totalprice}}</td>
+                <td><a href="{% url 'removefromcart' i.id %}">REMOVE</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h1>Total Amount : {{total_price}}</h1>
+</center>
+{% endblock %}
