@@ -1,31 +1,75 @@
+
 {% extends 'main.html' %}
+{% load static %}
+
 {% block content %}
-<center>
-    <h1>CART PAGE</h1>
-    <table border="1">
-        <tr>
-            <th>SL. No</th>
-            <!-- <th>Product Image</th> -->
-            <th>PRoduct Name</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total Price</th>
-            <th>Remove</th>
-            </tr>
-            {% for i in cartproducts %}
-            <tr>
-                <td>{{forloop.counter}}</td>
-                <!-- <td>{{i.pimage}}</td>   -->
-                <td>{{i.pname}}</td>
-                <td>{{i.pcategory}}</td>
-                <td>{{i.price}}</td>
-                <td><a href="{% url 'decrementQty' i.id %}">- </a>{{i.quantity}} <a href="{% url 'incrementQty' i.id %}">+</a></td>
-                <td>{{i.totalprice}}</td>
-                <td><a href="{% url 'removefromcart' i.id %}">REMOVE</a></td>
-        </tr>
+
+<h1 class="cart-title">My Cart</h1>
+
+<div class="cart-container">
+
+    <div class="cart-products">
+
+        {% for i in cartproducts %}
+        <div class="cart-card">
+
+            <div class="product-details">
+
+                <h2>{{i.pname}}</h2>
+
+                <p><strong>Category :</strong> {{i.pcategory}}</p>
+
+                <p><strong>Price :</strong> ₹{{i.price}}</p>
+
+                <div class="quantity-box">
+
+                    <a href="{% url 'decrementQty' i.id %}" class="qty-btn">−</a>
+
+                    <span>{{i.quantity}}</span>
+
+                    <a href="{% url 'incrementQty' i.id %}" class="qty-btn">+</a>
+
+                </div>
+
+                <h3>Total : ₹{{i.totalprice}}</h3>
+
+                <a href="{% url 'removefromcart' i.id %}" class="remove-btn">
+                    REMOVE
+                </a>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+        <h2 class="empty-cart">🛒 Your Cart is Empty</h2>
         {% endfor %}
-    </table>
-    <h1>Total Amount : {{total_price}}</h1>
-</center>
+
+    </div>
+
+    <div class="summary-card">
+
+        <h2>Order Summary</h2>
+
+        <div class="summary-item">
+            <span>Total Products</span>
+            <span>{{cartproductCount}}</span>
+        </div>
+
+        <div class="summary-item">
+            <span>Total Amount</span>
+            <span>₹{{total_price}}</span>
+        </div>
+
+        <button class="checkout-btn">
+            Proceed To Checkout
+        </button>
+
+    </div>
+     <div class="product-image">
+        <img src="{{i.pimage.url}}" alt="">
+    </div>
+
+</div>
+
 {% endblock %}

@@ -7,26 +7,27 @@
         <form action="">
             <input type="text" name="search" id="search" placeholder="Search Here....">
         </form>
-        <form action="">
-            <input type="submit" value="trading" name="trading">
+         <form action="">
+            <button type="submit" name="trading">🔥 Trending</button>
         </form>
+
         <form action="">
-            <input type="submit" value="offer" name="offer">
+            <button type="submit" name="offer">🎁 Offers</button>
         </form>
 
         {% endif %}
         {% if request.user.is_authenticated %}
         <a href="{% url 'home' %}">HOME</a>
-        <a href="{% url 'cart' %}">CART ({{cartproductCount}})</a>
+        <a href="{% url 'cart' %}" class="cart-link"> CART<span class="cart-badge">{{cartproductCount}}</span></a>
         <a href="{% url 'profile' %}">PROFILE</a>
         <a href="{% url 'logout_' %}">LOGOUT</a>
-        <a href="">SUPPORT</a>
-        <a href="">KNOWUS</a>
+        <a href="{% url 'support' %}">SUPPORT</a>
+        <a href="{% url 'knowUs' %}">KNOWUS</a>
         {% else %}
         <a href="{% url 'home' %}">HOME</a>
         <a href="{% url 'login_' %}">LOGIN</a>
-        <a href="">SUPPORT</a>
-        <a href="">KNOWUS</a>
+        <a href="{% url 'support' %}">SUPPORT</a>
+        <a href="{% url 'knowUs' %}">KNOWUS</a>
         {% endif %}
     </div>
 </nav>

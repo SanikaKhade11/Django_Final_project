@@ -113,3 +113,10 @@ def decrementQty(request,id):
     
     return redirect('cart')
 
+
+def support(request):
+    return render(request, 'support.html')
+
+def knowUs(request):
+    return render(request, 'knowus.html')
+

@@ -7,25 +7,19 @@ body{
 h1{
     text-align:center;
     color:#0077ff;
-    margin-top:30px;
+    margin-top:40px;
     font-size:40px;
-}
-
-/* ERROR MESSAGE */
-
-center{
-    color:red;
-    font-weight:600;
 }
 
 /* FORM CARD */
 
 form{
-    width:500px;
-    margin:30px auto;
+    width:450px;
+    margin:40px auto;
     padding:35px;
 
     background:white;
+
     border-radius:20px;
 
     box-shadow:0 8px 20px rgba(0,0,0,.08);
@@ -42,11 +36,12 @@ form:hover{
 
 label{
     display:block;
-    text-align:left;
     margin-bottom:8px;
 
     color:#333;
     font-weight:600;
+
+    text-align:left;
 }
 
 /* INPUTS */
@@ -61,12 +56,20 @@ input{
     font-size:16px;
 
     box-sizing:border-box;
+    margin-bottom:20px;
 }
 
 input:focus{
     outline:none;
     border-color:#0077ff;
     box-shadow:0 0 8px rgba(0,119,255,.2);
+}
+
+/* READONLY FIELD */
+
+input[readonly]{
+    background:#f1f5f9;
+    color:#666;
 }
 
 /* BUTTON */
@@ -94,4 +97,13 @@ button{
 button:hover{
     transform:translateY(-2px);
     box-shadow:0 5px 15px rgba(0,119,255,.3);
+}
+
+/* ERROR MESSAGE */
+
+.error-msg{
+    text-align:center;
+    color:#e91e63;
+    font-weight:bold;
+    margin-bottom:15px;
 }

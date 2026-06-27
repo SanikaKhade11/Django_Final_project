@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'forgetPass.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Forget Password</h1>
+<p class="error-msg">{{error}}</p>
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="">Enter UserName</label>
+    <input type="text" name="username" id="">
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

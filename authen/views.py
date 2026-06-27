@@ -64,3 +64,56 @@ def logout_(request):
     logout(request)
     return redirect('login_')
 
+def resetPass(request):
+    user = request.user
+    if request.method == 'POST':
+        if 'old_pass' in request.POST:
+            old = request.POST['old_pass']
+
+            u = authenticate(username = user.username, password = old)
+            if u:
+                return render(request, 'resetPass.html', {'new_pass': True})
+            else:
+
+                return render(request, 'resetPass.html', {'error': 'Old password is incorrect'})
+        
+        if 'new_pass' in request.POST:
+            new = request.POST['new_pass']
+
+            if user.check_password(new):
+                return render(request, 'resetPass.html', {'error': 'New Password Cannot Be Same As Old password'})
+            user.set_password(new)
+            user.save()
+            return redirect('login_')
+      
+    return render(request, 'resetPass.html')
+
+def forgetPass(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        try:
+            u = User.objects.get(username = username)
+            request.session['fp_user'] = u.username
+            return redirect('new_password')
+        except:
+            return render(request,'forgotpass.html',{'error':'Invalid Username'})
+
+    return render(request, 'forgetPass.html')
+
+def new_password(request):
+    username=request.session.get('fp_user')
+    if username is None:
+        return redirect('forgetpass')
+    user=User.objects.get(username=username)
+    if request.method == 'POST':
+        new_pass=request.POST['new']
+        if user.check_password(new_pass):
+            return render(request,'newpass.html',{'error':'New password should not be similar as old password'})
+        user.set_password(new_pass)
+        user.save()
+        #remove the username from the session storage
+        del request.session['fp_user']
+        return redirect('login_')
+    return render(request,'newpass.html')
+
+

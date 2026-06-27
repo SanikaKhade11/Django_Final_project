@@ -1,0 +1,97 @@
+body{
+    background: #f4f7fb;
+}
+
+/* HEADING */
+
+.update-title{
+    text-align: center;
+    color: #0077ff;
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+/* FORM CARD */
+
+.update-form{
+    width: 500px;
+    margin: 40px auto;
+    padding: 35px;
+
+    background: white;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+
+    transition: .3s;
+}
+
+.update-form:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.15);
+}
+
+/* LABELS */
+
+.update-form label{
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+
+    color: #333;
+    font-weight: 600;
+}
+
+/* INPUTS */
+
+.update-form input{
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    box-sizing: border-box;
+}
+
+.update-form input:focus{
+    outline: none;
+    border-color: #0077ff;
+    box-shadow: 0 0 8px rgba(0,119,255,.2);
+}
+
+/* DISABLED FIELD */
+
+.update-form input:disabled{
+    background: #f1f5f9;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* BUTTON */
+
+.update-form button{
+    width: 100%;
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 25px;
+
+    background: linear-gradient(135deg,#0077ff,#00bfff);
+
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.update-form button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,119,255,.3);
+}

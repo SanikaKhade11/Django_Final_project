@@ -7,5 +7,7 @@ urlpatterns=[
     path('addtocart/<int:id>',addtocart,name='addtocart'),
     path('removefromcart/<int:id>',removefromcart,name='removefromcart'),
     path('incrementQty/<int:id>',incrementQty,name='incrementQty'),
-    path('decrementQty/<int:id>',decrementQty,name='decrementQty')
+    path('decrementQty/<int:id>',decrementQty,name='decrementQty'),
+    path('support/',support,name='support'),
+    path('knowUs/',knowUs,name='knowUs')
 ]

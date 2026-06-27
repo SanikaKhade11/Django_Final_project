@@ -7,8 +7,8 @@
 {% block content %}
 <center>
     <h1>Profile Page</h1>
-    <br><br>
-    <h2>
+    <br>
+    <!-- <h2>
         Username : {{ request.user}}
         <br><br>
         First Name : {{request.user.first_name}}
@@ -19,6 +19,25 @@
         <br><br>
     </h2>
     <a href="">RESET PASSWORD</a>
-    <a href="{% url 'updateProfile' %}">UPDATE PROFILE </a>
+    <a href="{% url 'updateProfile' %}">UPDATE PROFILE </a> -->
+    <div class="profile-card">
+
+    <!-- <div class="profile-icon">
+        👤
+    </div> -->
+
+    <div class="profile-info">
+        <p><strong>Username :</strong> {{request.user}}</p>
+        <p><strong>First Name :</strong> {{request.user.first_name}}</p>
+        <p><strong>Last Name :</strong> {{request.user.last_name}}</p>
+        <p><strong>Email :</strong> {{request.user.email}}</p>
+    </div>
+
+    <div class="profile-btns">
+        <a href="{% url 'resetPass' %}" class="reset-btn">Reset Password</a>
+        <a href="{% url 'updateProfile' %}" class="update-btn">Update Profile</a>
+    </div>
+
+</div>
 </center>
 {% endblock %}

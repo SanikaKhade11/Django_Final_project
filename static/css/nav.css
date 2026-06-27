@@ -2,6 +2,7 @@ body{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    /* font-family: 'Poppins', sans-serif; */
 }
 a{
     text-decoration: none;
@@ -13,7 +14,9 @@ nav{
     height: 50%;
     /* width: 100%; */
     background-color: darkblue;
-    padding: 10px 12px;
+    /* padding: 10px 12px; */
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 .nav-logo a{
     color: white;
@@ -35,10 +38,85 @@ nav{
     font-size: 18px;
     font-weight: bold;
 }
-nav #search{
-    padding: 8px 10px;
-    border-radius: 5px;
-    width: 100%;
-    gap: 35px;
+.nav-search{
+    position: relative;
 }
 
+#search{
+    width: 280px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    font-size: 15px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+#search:focus{
+    width: 380px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.8);
+}
+
+.nav-link button{
+    margin-top:5px;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-link button[name="trading"]{
+    background: #ff9800;
+    color: white;
+}
+
+.nav-link button[name="offer"]{
+    background: #e91e63;
+    color: white;
+}
+
+.nav-link button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.cart-link{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart-badge{
+    position: absolute;
+    top: -8px;
+    right: -20px;
+    background: red;
+    color: white;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+.cart-badge{
+    animation: pulse 1.5s infinite;
+}
+
+/* @keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.15);
+    }
+    100%{
+        transform: scale(1);
+    }
+} */

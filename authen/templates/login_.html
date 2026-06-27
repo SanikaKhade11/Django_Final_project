@@ -12,17 +12,17 @@
     <p class="error">{{error}}</p>
     <form action="" method="post">
         {% csrf_token %}
-        <label for="">Username : </label>
+        <label for="">Username </label>
     <input type="text" name="username">
     <br><br>
-    <label for="">Password : </label>
+    <label for="">Password </label>
     <input type="text" name="password" id="">
     <br><br>
     <br>
     <button type="submit">SUBMIT</button>
     <br><br>
     <a href="{% url 'register' %}">Sign Up</a> 
-    <a href="">Forgot Password</a>
+    <a href="{% url 'forgetPass'%}">Forgot Password</a>
     </form>
 </center>
 {% endblock %}

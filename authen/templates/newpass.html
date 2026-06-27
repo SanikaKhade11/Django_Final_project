@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'newpass.css' %}">
+{% endblock %}
+{% block content %}
+<h1>New password </h1>
+<center>
+    <p class="error-msg">{{ error }}</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="">Enter the new password: </label>
+        <input type="password" name="new" id="">
+        <button type="submit">submit</button>
+    </form>
+</center>
+{% endblock %}

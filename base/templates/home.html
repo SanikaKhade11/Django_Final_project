@@ -5,7 +5,6 @@
 <center>
     <h1>Homepage</h1>
 
-<br><br>
     <!-- {{category}} -->
     {% for i in category %}
     <form action=""  class="category-form">
@@ -18,19 +17,18 @@
     <h1>No Product Found....!</h1>
     {% endif %}
     </center>
+     {% if trend %}
+     <h2 class="trending-title">Trending........!</h2>
+     {% endif %}
+     {% if offer %}
+     <h2 class="offer-title">Offer 50 % offer</h2>
+     {% endif %}
 <div class="home">
      {% for i in data %}
-
-     {% if trend %}
-     <h1>Trending........!</h1>
-     {% endif %}
-
-     {% if offer %}
-     <h1>Offer50 % offer</h1>
-     {% endif %}
-
    <div class="card">
-    <img src="{{i.pimage.url}}" alt="">
+    <div class="img-box">
+        <img src="{{i.pimage.url}}" alt="">
+    </div>
     <div class="card-body">
         <h3>{{i.pname}}</h3>
         <p>{{i.pcategory}}</p>
